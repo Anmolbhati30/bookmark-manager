@@ -10,6 +10,7 @@ group :development do
   gem "sinatra"
   gem "sinatra-contrib"
   gem "webrick"
+  gem "pg"
 end
 
 group :test do
