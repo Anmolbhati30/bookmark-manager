@@ -1,13 +1,21 @@
 <html>
-  <head>
-  <title>Bookmarks</title>
-  </head>
 
-  <body>
+<head>
+    <title>Bookmarks</title>
+</head>
+
+<body>
     <ul>
-      <% @bookmarks.each do |bookmark| %>
-        <li><%= bookmark %></li>
-      <% end %>
+        <% @bookmarks.each do |bookmark| %>
+            <li>
+                <%= bookmark %>
+            </li>
+            <% end %>
     </ul>
-  </body>
+
+    <form action="/bookmarks/new">
+        <input type="submit" value="Create new bookmark">
+    </form>
+</body>
+
 </html>
