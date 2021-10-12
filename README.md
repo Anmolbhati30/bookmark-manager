@@ -6,7 +6,9 @@ A database-backed Sinatra web application to allow users to sign-in and track th
 ## User requirements
 
 ```
-As a busy user, so that I can keep track all my browser tabs, I want to see all my bookmarks.
+As a busy user, 
+so that I can keep track all my browser tabs, 
+I want to see all my bookmarks.
 ```
 
 ## Domain Models
