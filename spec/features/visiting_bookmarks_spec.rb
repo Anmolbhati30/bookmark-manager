@@ -5,13 +5,14 @@ feature "Viewing bookmarks" do
   end
 
   scenario "Visiting /bookmarks homepage" do
-    visit "/bookmarks/index"
+    connection = PG.connect(dbname: "bookmark_manager_test")
 
-    some_bookmarks = [
-      "http://www.makersacademy.com/",
-      "http://www.destroyallsoftware.com/",
-      "http://www.google.com/",
-    ]
+    # Add the test data
+    connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.makersacademy.com');")
+    connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.destroyallsoftware.com');")
+    connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.google.com');")
+
+    visit "/bookmarks/index"
 
     some_bookmarks.each { |bookmark|
       expect(page).to have_content bookmark
